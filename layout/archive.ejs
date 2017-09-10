@@ -1,0 +1,17 @@
+<div class="archive center-block">
+  <% var lastyear; %>
+  <% page.posts.each(function(post){ %>
+    <% var year = post.date.year() %>
+    <% if(lastyear !== year){ %>
+      <h3 class="post-year"><%= year %></h3>
+      <% lastyear = year %>
+    <% } %>
+    <div class="archive-item ">
+      <div class="date"><%= post.date.format('YYYY-MM-DD') %></div>
+      <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+    </div>
+  <% }) %>
+  <%- partial('_partial/paginator') %>
+
+
+</div>

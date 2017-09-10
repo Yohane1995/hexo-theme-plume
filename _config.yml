@@ -1,0 +1,7 @@
+menu:
+  home: /
+  archive: /archives
+  # category: /categories
+  # tags: /tags
+avatar:
+  pic: images/avatar.png

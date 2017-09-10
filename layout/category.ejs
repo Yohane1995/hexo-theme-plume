@@ -1,0 +1,9 @@
+<div class="category center-block">
+  <h1><%= page.category %></h1>
+  <% page.posts.each(function(post){ %>
+    <div class="category-item">
+      <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      <span class="date"><%= post.date.format('YYYY-MM-DD') %></span>
+    </div>
+  <% }) %>
+</div>

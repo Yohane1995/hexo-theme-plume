@@ -1,0 +1,25 @@
+
+
+  <div class="posts">
+  <% page.posts.each(function (post) { %>
+    <article class="post">
+      <div class="post-title">
+        <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </div>
+      <div class="post-category"><a href="<%= url_for(post.category)%>"></a></div>
+      <div class="post-content">
+      <% if(post.excerpt) { %>
+        <%-post.excerpt%>
+      <% } else { %>
+        <%-post.content%>
+      <% } %>
+      </div>
+      <div class="post-meta">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+        <a class="post-detail pull-right" href="<%- url_for(post.path) %>" >more</a>
+      </div>
+    </article>
+  <% }) %>
+</div>
+<%- partial('_partial/paginator') %>
